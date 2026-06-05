@@ -24,4 +24,4 @@ jobs:
     # Memicu file otomatisasi agar menghasilkan dataset terbaru saat terpantik trigger push
     - name: Run Automate Preprocessing
       run: |
-        python preprocessing/automate_Aliya.py
+        python preprocessing/automate_Pradnya-Aliya.py
