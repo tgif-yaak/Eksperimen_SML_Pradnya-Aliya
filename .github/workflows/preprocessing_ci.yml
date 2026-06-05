@@ -1,0 +1,27 @@
+name: Automated Preprocessing Data CI
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  run-preprocessing:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+
+    - name: Install Dependencies
+      run: |
+        pip install pandas
+
+    # Memicu file otomatisasi agar menghasilkan dataset terbaru saat terpantik trigger push
+    - name: Run Automate Preprocessing
+      run: |
+        python preprocessing/automate_Aliya.py
